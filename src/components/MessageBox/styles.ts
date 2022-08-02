@@ -17,6 +17,10 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: space-between;
 
+        > header h1{
+            display: flex;
+            justify-content: space-between;
+        }
         > header img{
             width: 35px;
             margin-left: 5px;
