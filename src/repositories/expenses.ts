@@ -185,6 +185,7 @@ export default [
   {"description":"Água",                  "amount":"100.10","type":"saída","frequency":"recorrente","date":"2022-03-15"},
   {"description":"Telefone",              "amount":"99.99", "type":"saída","frequency":"recorrente","date":"2022-03-23"},
   {"description":"Plano de Saúde",        "amount":"300.00","type":"saída","frequency":"recorrente","date":"2022-03-23"},
+  {"description":"Despesas com Carro",    "amount":"861.67","type":"saída","frequency":"eventual",  "date":"2022-03-23"},
   {"description":"Compras do mês",        "amount":"800.50","type":"saída","frequency":"recorrente","date":"2022-03-17"},
   {"description":"Parcela do Celular 2/5","amount":"150.99","type":"saída","frequency":"eventual",  "date":"2022-03-18"},
   {"description":"Troca de Oléo do carro","amount":"90.00", "type":"saída","frequency":"eventual",  "date":"2022-03-23"},
