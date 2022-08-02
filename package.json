@@ -8,8 +8,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/react-countup": "^4.3.1",
     "@types/styled-components": "^5.1.25",
     "react": "^18.0.0",
+    "react-countup": "^6.3.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.4.0",
     "react-router": "^6.3.0",

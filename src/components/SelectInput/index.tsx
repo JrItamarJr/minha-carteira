@@ -16,7 +16,6 @@ type Props = {
     children?: React.ReactNode
 };
 
-
 const SelectInput: React.FC<iSelectInputProps> = ({ options, onChange, defaultValue }) => {
     return (
         <Container>

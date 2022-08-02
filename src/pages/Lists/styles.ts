@@ -20,7 +20,7 @@ export const Filters = styled.div`
 
         transition: opacity .3s;
 
-        :hover{
+        &:hover{
             opacity: .7;
         }
     }
