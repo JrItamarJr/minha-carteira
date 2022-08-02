@@ -100,7 +100,7 @@ const List: React.FC = () => {
         try {
             const parseMonth = Number(month);
             setMontSelected(parseMonth);
-        } catch (error) {
+        } catch {
             throw new Error('Mes selecionado é invalido')
         }
 
@@ -110,7 +110,7 @@ const List: React.FC = () => {
         try {
             const parseYear = Number(year);
             setYearSelected(parseYear);
-        } catch (error) {
+        } catch {
             throw new Error('Ano selecionado é invalido')
         }
 
