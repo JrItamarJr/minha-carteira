@@ -11,6 +11,7 @@ import expanses from '../../repositories/expenses'
 import gains from '../../repositories/gains'
 
 import happyImg from '../../assets/happy.svg'
+import sadImg from '../../assets/sad.svg'
 
 import {
     Container,
