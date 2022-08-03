@@ -5,6 +5,7 @@ import SelectInput from "../../components/SelectInput";
 import createID from '../../utils/createID';
 import WalletBox from '../../components/WalletBox';
 import MessageBox from "../../components/MessageBox";
+import PieChartBox from "../../components/PieChartBox";
 
 import listMonths from '../../utils/months'
 import expanses from '../../repositories/expenses'
@@ -18,20 +19,11 @@ import {
     Container,
     Content
 } from "./styles";
-import { MdDescription } from "react-icons/md";
 
 const Dashboard: React.FC = () => {
 
     const [montSelected, setMontSelected] = useState<number>(new Date().getMonth() + 1);
     const [yearSelected, setYearSelected] = useState<number>(new Date().getFullYear());
-
-
-    const options = [
-        { value: 'Itamar 01', label: 'Itamar 01' },
-        { value: 'Itamar 02', label: 'Itamar 02' },
-        { value: 'Itamar 03', label: 'Itamar 03' },
-
-    ];
 
     const years = useMemo(() => {
 
@@ -120,7 +112,7 @@ const Dashboard: React.FC = () => {
                 footerText: "Verifique seus gastos e tente cortar algumas coisas desnecessárias.",
                 icon: badImg,
             }
-        } else if (totalBalance == 0) {
+        } else if (totalBalance === 0) {
             return {
                 title: "Ufaa!",
                 description: "Neste mês, você gastou exatamente o que ganhou",
@@ -136,8 +128,32 @@ const Dashboard: React.FC = () => {
                 icon: laugImg,
             }
         }
-
     }, [totalBalance]);
+
+    const relationExpensesVersusGains = useMemo(() => {
+        const total = totalGains + totalExpenses;
+
+        const percentGains = (totalGains / total) * 100;
+        const percentExpenses = (totalExpenses / total) * 100;
+
+        const data = [
+            {
+                name: 'Entradas',
+                value: totalGains,
+                percent: Number(percentGains.toFixed(1)),
+                color: '#F7931B'
+            },
+            {
+                name: 'Saidas',
+                value: totalExpenses,
+                percent: Number(percentExpenses.toFixed(1)),
+                color: '#E44C4E'
+            },
+        ];
+
+        return data;
+
+    }, [totalGains, totalExpenses]);
 
     const handleMonthSelected = (month: string) => {
         try {
@@ -146,7 +162,6 @@ const Dashboard: React.FC = () => {
         } catch (error) {
             throw new Error('Mes selecionado é invalido')
         }
-
     };
 
     const handleYearSelected = (year: string) => {
@@ -156,7 +171,6 @@ const Dashboard: React.FC = () => {
         } catch (error) {
             throw new Error('Ano selecionado é invalido')
         }
-
     };
 
 
@@ -202,6 +216,8 @@ const Dashboard: React.FC = () => {
                         description={message.description}
                         footerText={message.footerText}
                         icon={message.icon} />
+
+                    <PieChartBox data={relationExpensesVersusGains} />
 
                 </Content>
             </Container>
