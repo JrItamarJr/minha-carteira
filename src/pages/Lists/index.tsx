@@ -27,7 +27,7 @@ interface iData {
 const List: React.FC = () => {
 
     const [data, setData] = useState<iData[]>([]);
-    const [montSelected, setMontSelected] = useState<number>(new Date().getMonth() + 1);
+    const [monthSelected, setMonthSelected] = useState<number>(new Date().getMonth() + 1);
     const [yearSelected, setYearSelected] = useState<number>(new Date().getFullYear());
     const [frequecyFilterSelected, setFrequecyFilterSelected] = useState(['recorrente', 'eventual']);
 
@@ -99,7 +99,7 @@ const List: React.FC = () => {
     const handleMonthSelected = (month: string) => {
         try {
             const parseMonth = Number(month);
-            setMontSelected(parseMonth);
+            setMonthSelected(parseMonth);
         } catch {
             throw new Error('Mes selecionado é invalido')
         }
@@ -125,7 +125,7 @@ const List: React.FC = () => {
             const month = date.getMonth() + 1;
             const year = date.getFullYear();
 
-            return month === montSelected && year === yearSelected && frequecyFilterSelected.includes(item.frequency)
+            return month === monthSelected && year === yearSelected && frequecyFilterSelected.includes(item.frequency)
         });
 
         const dataFormated = filterDate.map(item => {
@@ -140,7 +140,7 @@ const List: React.FC = () => {
             }
         });
         setData(dataFormated);
-    }, [pageData, montSelected, yearSelected, data.length, frequecyFilterSelected]);
+    }, [pageData, monthSelected, yearSelected, data.length, frequecyFilterSelected]);
 
     return (
         <Container>
@@ -149,7 +149,7 @@ const List: React.FC = () => {
                     key={createID()}
                     options={months}
                     onChange={(e) => handleMonthSelected(e.target.value)}
-                    defaultValue={montSelected} />
+                    defaultValue={monthSelected} />
                 <SelectInput
                     key={createID()}
                     options={years}
