@@ -6,7 +6,6 @@ grid-area: AS;
 background-color: ${props => props.theme.colors.primary};
 color: ${props => props.theme.colors.white};
 padding-left: 20px;
-border-right: 1px solid ${props => props.theme.colors.gray};
 `;
 
 export const Header = styled.header`
