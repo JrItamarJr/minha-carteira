@@ -16,6 +16,12 @@ declare module 'styled-components' {
             info: string,
             warning: string,
 
+            recorrent: string,
+            eventual: string,
+
+            entrada: string,
+            saida: string,
+
 
         },
     }

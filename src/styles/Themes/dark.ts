@@ -14,6 +14,11 @@ export default {
         info: '#9A5F12',
         warning: '#E44C4E',
 
+        entrada: "#F7931B",
+        saida: "#E44C4E",
+
+        recorrent: "#F7931B",
+        eventual: "#E44C4E",
 
     },
 
