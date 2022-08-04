@@ -1,8 +1,7 @@
 import React from "react";
 
 import { Routes, Route} from 'react-router-dom';
-import { useParams } from 'react-router';
-import Dashboard from "../pages/Dashborad";
+import Dashboard from "../pages/Dashboard";
 import List from '../pages/Lists';
 import Layout from '../components/Layout';
 

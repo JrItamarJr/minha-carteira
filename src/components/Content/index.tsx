@@ -5,12 +5,10 @@ type Props = {
     children?: React.ReactNode
 };
 
-const Content: React.FC<Props> = ({ children }) => {
-    return (
-        <Container>
-            {children}
-        </Container>
-    );
-}
+const Content: React.FC<Props> = ({ children }) => (
+    <Container>
+        {children}
+    </Container>
+);
 
 export default Content;

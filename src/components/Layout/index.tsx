@@ -10,17 +10,16 @@ type Props = {
 };
 
 
-const GridLayout: React.FC<Props> = ({ children }) => {
-    return (
-        <TestGrid>
-            <MainHeader />
-            <Aside />
-            <Content>
-                {children}
-            </Content>
-        </TestGrid>
-    );
+const GridLayout: React.FC<Props> = ({ children }) => (
+    <TestGrid>
+        <MainHeader />
+        <Aside />
+        <Content>
+            {children}
+        </Content>
+    </TestGrid>
+);
 
-}
+
 
 export default GridLayout;

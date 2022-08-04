@@ -16,19 +16,18 @@ type Props = {
     children?: React.ReactNode
 };
 
-const SelectInput: React.FC<iSelectInputProps> = ({ options, onChange, defaultValue }) => {
-    return (
-        <Container>
-            <select onChange={onChange} defaultValue={defaultValue} >
-                {
-                    options.map(option => (
-                        <option key={createID()} value={option.value}>{option.label} </option>
-                    ))
-                }
-            </select>
-        </Container>
-    );
+const SelectInput: React.FC<iSelectInputProps> = ({ options, onChange, defaultValue }) => (
+    <Container>
+        <select onChange={onChange} defaultValue={defaultValue} >
+            {
+                options.map(option => (
+                    <option key={createID()} value={option.value}>{option.label} </option>
+                ))
+            }
+        </select>
+    </Container>
+);
 
-}
+
 
 export default SelectInput;
