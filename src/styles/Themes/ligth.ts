@@ -3,7 +3,7 @@ export default {
     title: 'ligth',
     colors: {
         primary: '#DCDCDC',
-        secondary: '#FFF',
+        secondary: '#FFFFFF',
         tertiary: '#F5F5F5',
 
         white: '#000',
@@ -13,13 +13,6 @@ export default {
         sucess: '#015A8B',
         info: '#9A5F12',
         warning: '#E44C4E',
-
-
-        entrada: "#F7931B",
-        saida: "#E44C4E",
-
-        recorrent: "#F7931B",
-        eventual: "#E44C4E",
 
     },
 
