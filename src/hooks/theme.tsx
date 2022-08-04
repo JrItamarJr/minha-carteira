@@ -32,13 +32,25 @@ type Props = {
 export const ThemeContext = createContext<iThemeContext>({} as iThemeContext);
 
 const ThemeProvider: React.FC<Props> = ({ children }) => {
-    const [theme, setTheme] = useState<ITheme>(dark);
+    
+    const [theme, setTheme] = useState<ITheme>(() => {
+
+        const themeSaved = localStorage.getItem('@minha-carteira:theme')
+
+        if (themeSaved) {
+            return JSON.parse(themeSaved)
+        } else {
+            return dark;
+        }
+    });
 
     const toggleTheme = () => {
         if (theme.title === 'dark') {
             setTheme(ligth);
+            localStorage.setItem('@minha-carteira:theme', JSON.stringify(ligth));
         } else {
             setTheme(dark);
+            localStorage.setItem('@minha-carteira:theme', JSON.stringify(dark));
         }
     };
     return (
