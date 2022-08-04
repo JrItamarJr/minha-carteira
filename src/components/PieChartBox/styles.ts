@@ -73,8 +73,6 @@ export const Legend = styled.li<ILegendProps>`
     > span {
         margin-left: 5px;
     }
-
-
 `;
 
 export const SideRight = styled.main`
